@@ -5,7 +5,7 @@ from participant.models import Participant
 from django.utils import timezone
 
 
-class ResearchField(models.Model):
+class StudyField(models.Model):
     name = models.CharField(max_length=255)
 
     @staticmethod
@@ -43,7 +43,7 @@ class ResearchField(models.Model):
 
 class Research(models.Model):
     name = models.CharField(max_length=255)
-    field = models.ForeignKey(ResearchField, on_delete=models.SET_NULL, null=True)
+    field = models.ForeignKey(StudyField, on_delete=models.SET_NULL, null=True)
     capacity = models.IntegerField()
 
     @staticmethod
